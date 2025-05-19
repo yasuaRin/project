@@ -1,0 +1,60 @@
+<!-- templates/admin/dashboard.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Admin Dashboard</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+  <script>
+    function confirmDelete(name, eid) {
+      const result = confirm("⚠️ Are you sure?\nDo you really want to delete " + name + "?\nThis action cannot be undone.");
+      if (result) {
+        window.location.href = "/admin/employee/" + eid + "/delete";
+      }
+    }
+  </script>
+</head>
+<body>
+
+<div class="container">
+
+  <h1>👥 Employee List</h1>
+
+  <div class="dashboard-actions">
+    <a href="/admin/employee/add" class="button">➕ Add New</a>
+    <a href="/" class="button back-button">⬅️ Home</a>
+    <a href="/admin/logout" class="button back-button">🚪 Logout</a>
+  </div>
+
+  <table>
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>Name</th>
+        <th>Department</th>
+        <th>Country</th>
+        <th>Monthly Salary</th>
+        <th>Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for emp in employees %}
+      <tr>
+        <td>{{ emp.employee_id }}</td>
+        <td>{{ emp.first_name }} {{ emp.last_name }}</td>
+        <td>{{ emp.department }}</td>
+        <td>{{ emp.country }}</td>
+        <td>IDR {{ "{:,}".format(emp.monthly_salary * 15000|int) }}</td>
+        <td>
+          <a href="/admin/employee/{{ emp.employee_id }}/edit" class="button">✏️ Edit</a>
+          <a href="#" onclick="confirmDelete('{{ emp.first_name }} {{ emp.last_name }}', '{{ emp.employee_id }}')" class="button back-button">🗑️ Delete</a>
+        </td>
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+
+</div>
+
+</body>
+</html>

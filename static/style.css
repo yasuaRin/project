@@ -1,0 +1,251 @@
+/* General Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Base Styles */
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #f9f9f9;
+  color: #333;
+  line-height: 1.6;
+  padding: 20px;
+}
+
+a {
+  text-decoration: none;
+  color: #1abc9c;
+}
+
+h1,
+h2,
+h3 {
+  color: #2c3e50;
+  margin-bottom: 10px;
+}
+
+/* Layout Container */
+.container {
+  max-width: 800px;
+  margin: auto;
+  background: white;
+  padding: 40px;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+}
+
+/* Alerts / Flash Messages */
+.alert-success {
+  display: none;
+  /* Hidden by default, shown via JS */
+  background-color: #d4edda;
+  color: #155724;
+  padding: 15px;
+  margin-bottom: 20px;
+  text-align: center;
+  font-weight: bold;
+  border-radius: 5px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  border-left: 4px solid #28a745;
+}
+
+.alert-danger {
+  background-color: #f8d7da;
+  color: #721c24;
+  padding: 10px 15px;
+  border-left: 4px solid #dc3545;
+  margin-bottom: 20px;
+  border-radius: 5px;
+}
+
+/* Buttons */
+.button {
+  display: inline-block;
+  background-color: #2c3e50;
+  color: white;
+  padding: 10px 20px;
+  border-radius: 5px;
+  text-decoration: none;
+  margin: 10px 0;
+  font-size: 16px;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.button:hover {
+  background-color: #1abc9c;
+}
+
+/* Back and Print Buttons */
+.back-button {
+  background-color: #95a5a6;
+}
+
+.back-button:hover {
+  background-color: #7f8c8d;
+}
+
+.print-button {
+  background-color: #2ecc71;
+  color: white;
+}
+
+.print-button:hover {
+  background-color: #27ae60;
+}
+
+/* Button Container */
+.invoice-actions {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 30px;
+  flex-wrap: wrap;
+  gap: 15px;
+}
+
+/* Form Styling */
+.invoice-form {
+  display: block;
+  /* Controlled by JS when success message shows */
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.invoice-form label {
+  display: block;
+  margin-bottom: 10px;
+  font-weight: bold;
+}
+
+.invoice-form input[type="text"],
+.invoice-form input[type="number"],
+.invoice-form input[type="date"],
+.invoice-form select,
+.invoice-form input[type="email"],
+.invoice-form input[type="password"] {
+  width: 100%;
+  max-width: 250px;
+  padding: 10px;
+  margin-bottom: 15px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 15px;
+}
+
+.invoice-form button.button {
+  font-size: 16px;
+  padding: 10px 20px;
+  background-color: #2c3e50;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+.invoice-form button.button:hover {
+  background-color: #1abc9c;
+}
+
+/* Form Groups for Add/Edit Employee */
+.employee-form {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.form-group {
+  flex: 1 1 calc(50% - 10px);
+  max-width: calc(50% - 10px);
+  width: 100%;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: bold;
+}
+
+.form-group input[type="text"],
+.form-group input[type="number"],
+.form-group input[type="date"],
+.form-group select,
+.form-group input[type="email"],
+.form-group input[type="password"] {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 15px;
+}
+
+.form-actions {
+  margin-top: 30px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* Table Styles */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+  font-size: 15px;
+}
+
+th,
+td {
+  padding: 12px 15px;
+  text-align: left;
+  border-bottom: 1px solid #ddd;
+}
+
+th {
+  background-color: #2c3e50;
+  color: white;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+tr:hover {
+  background-color: #f1f1f1;
+  transition: background-color 0.3s ease;
+}
+
+td:last-child {
+  white-space: nowrap;
+}
+
+/* Action Buttons in Table */
+.button {
+  display: inline-block;
+  padding: 8px 16px;
+  font-size: 14px;
+  border-radius: 4px;
+  margin-right: 5px;
+  transition: background-color 0.3s ease;
+}
+
+.button:hover {
+  background-color: #1abc9c;
+}
+
+.back-button {
+  background-color: #95a5a6;
+}
+
+.back-button:hover {
+  background-color: #7f8c8d;
+}
+
+/* Footer */
+.footer {
+  margin-top: 50px;
+  text-align: center;
+  font-size: 14px;
+  color: #aaa;
+}

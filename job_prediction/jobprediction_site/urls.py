@@ -16,7 +16,9 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-
+from predictor.views import predict_job_fraud
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('predict/', predict_job_fraud, name='predict_job_fraud'),
 ]
+

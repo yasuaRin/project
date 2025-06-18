@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Job Fraud Prediction</title>
+</head>
+<body>
+    <h1>Enter Job Details</h1>
+    <form method="POST">
+        {% csrf_token %}
+        <label>Title:</label><br>
+        <input type="text" name="title" required><br><br>
+
+        <label>Description:</label><br>
+        <textarea name="description" required></textarea><br><br>
+
+        <label>Requirements:</label><br>
+        <textarea name="requirements" required></textarea><br><br>
+
+        <label>Benefits:</label><br>
+        <textarea name="benefits" required></textarea><br><br>
+
+        <input type="submit" value="Predict">
+    </form>
+
+    {% if prediction is not None %}
+        <h2>Prediction: {{ prediction }}</h2>
+    {% endif %}
+</body>
+</html>
